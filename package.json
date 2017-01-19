@@ -1,0 +1,84 @@
+{
+  "name": "react-native-navigation",
+  "version": "2.0.0-alpha.0",
+  "description": "React Native Navigation - truly native navigation for iOS and Android",
+  "license": "MIT",
+  "nativePackage": true,
+  "author": "Daniel Zlotin <zlotindaniel@gmail.com>",
+  "contributors": [
+    "Tal Kol <talkol@gmail.com>",
+    "Guy Carmeli <guyc@wix.com>",
+    "Ran Greenberg <rang@wix.com>",
+    "Artal Druk <artald@wix.com>"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "bugs": {
+    "url": "https://github.com/wix/react-native-navigation/issues"
+  },
+  "homepage": "https://github.com/wix/react-native-navigation",
+  "readme": "https://github.com/wix/react-native-navigation#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wix/react-native-navigation.git"
+  },
+  "main": "src/index.js",
+  "scripts": {
+    "build": ":",
+    "lint": "eslint src",
+    "test-js": "BABEL_ENV=test jest --coverage",
+    "test-android": "node ./scripts/test.android.js",
+    "test-ios": "node ./scripts/test.ios.js",
+    "test": "npm run lint && npm run test-js && npm run test-android && npm run test-ios",
+    "test-watch": "BABEL_ENV=test jest --coverage --watch",
+    "release": "node ./scripts/release.js"
+  },
+  "peerDependencies": {
+    "react-native": "*",
+    "react": "*"
+  },
+  "dependencies": {
+    "lodash": "4.x.x"
+  },
+  "devDependencies": {
+    "react-native": "0.38.0",
+    "react": "15.4.1",
+    "react-test-renderer": "15.4.1",
+    "babel-cli": "6.x.x",
+    "babel-core": "6.x.x",
+    "babel-polyfill": "6.x.x",
+    "babel-preset-react-native": "1.x.x",
+    "babel-register": "6.x.x",
+    "babel-jest": "18.x.x",
+    "eslint": "3.x.x",
+    "eslint-plugin-babel": "4.x.x",
+    "eslint-plugin-react": "6.x.x",
+    "eslint-plugin-react-native": "2.x.x",
+    "jest": "18.x.x",
+    "jest-cli": "18.x.x",
+    "remx": "0.1.x",
+    "semver": "5.x.x",
+    "shell-utils": "1.x.x"
+  },
+  "babel": {
+    "env": {
+      "test": {
+        "presets": [
+          "react-native"
+        ],
+        "retainLines": true
+      }
+    }
+  },
+  "jest": {
+    "preset": "react-native",
+    "testPathDirs": [
+      "node_modules",
+      "src",
+      "integration"
+    ],
+    "resetMocks": true,
+    "resetModules": true
+  }
+}
